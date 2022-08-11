@@ -1,4 +1,3 @@
-Error
 /**
  * Class Main creates an instance of the queue class.
  * Tests functionality of Queue class.
