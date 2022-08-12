@@ -6,7 +6,7 @@
 
 public class Main {
     public static void main(String[] args){
-        Queue queue = new Queue();
+        Queue queue = new Queue(10);
         queue.size();
         queue.add(12);
         queue.element();

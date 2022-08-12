@@ -12,12 +12,11 @@ public class Queue{
     private static int length;
     private static int first ;
     private static int last = 0;
-    private int max = 10;
 
     /**
      * Queue constructor that creates a queue of maximum size 10
      */
-    public Queue(){
+    public Queue(int max){
         queue = new int[max];
     }
 
@@ -38,8 +37,13 @@ public class Queue{
      */
     public boolean add(int e){
         try{
-            queue[last] = e;
-            length++;
+            if (length == 0){
+                queue[last] = e;
+                length++;
+            }else{ queue[last] = e;
+                length++;
+                last ++;}
+
             System.out.println(Arrays.toString(queue));
             return true;} catch(IllegalStateException exception){
             System.out.println(exception);
@@ -97,6 +101,7 @@ public class Queue{
     public void remove(){
         queue[first] = 0;
         length --;
+       // System.out.print(Arrays.toString(queue));
     }
 
 }
