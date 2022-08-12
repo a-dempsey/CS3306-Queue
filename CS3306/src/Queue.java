@@ -25,7 +25,6 @@ public class Queue{
      * @return returns the size of the queue as an integer
      */
     public int size(){
-        System.out.println(length);
         return length;
     }
 
@@ -43,10 +42,7 @@ public class Queue{
             }else{ queue[first] = e;
                 length++;
                 last ++;}
-
-            System.out.println(Arrays.toString(queue));
             return true;} catch(IllegalStateException exception){
-            System.out.println(exception);
             return false;
         }
     }
@@ -57,7 +53,6 @@ public class Queue{
      */
     public int element(){
         try{
-            System.out.println(queue[first]);
             return queue[first];
         } catch (NoSuchElementException e) {
             System.out.println("There are no elements in the queue");
@@ -100,7 +95,6 @@ public class Queue{
     public void remove(){
         queue[first] = 0;
         length --;
-       // System.out.print(Arrays.toString(queue));
     }
 
 }
