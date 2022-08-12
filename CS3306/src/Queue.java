@@ -40,7 +40,7 @@ public class Queue{
             if (length == 0){
                 queue[last] = e;
                 length++;
-            }else{ queue[last] = e;
+            }else{ queue[first] = e;
                 length++;
                 last ++;}
 
@@ -63,7 +63,6 @@ public class Queue{
             System.out.println("There are no elements in the queue");
             return 0;
         }
-
     };
 
     /**
@@ -89,7 +88,7 @@ public class Queue{
             return null;
         }else{
             int f = queue[first];
-            queue[first] = 0;
+            queue[last] = 0;
             length --;
             return Integer.toString(f);
         }

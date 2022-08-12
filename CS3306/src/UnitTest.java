@@ -5,14 +5,12 @@ import java.util.Arrays;
 
 public class UnitTest {
     Queue queue = new Queue(15);
-   // Queue sizeQueue = new Queue(5);
     /**
      * Tests functionality of size method from Queue class
      */
     @Test
     public void sizeTest(){
-       // sizeQueue.add(1);
-       // assertEquals(sizeQueue.size(), 5);
+        assertNotNull(queue.size());
     }
 
     /**
@@ -30,9 +28,8 @@ public class UnitTest {
     @Test
     public void elementTest(){
         queue.add(46);
-        queue.add(22);
         queue.add(36);
-        assertEquals(queue.element(), 46);
+        assertEquals(queue.element(), 36);
     }
 
     /**
@@ -42,7 +39,6 @@ public class UnitTest {
     public void peekTest(){
         queue.add(2);
         assertEquals(queue.peek(), Integer.toString((2)));
-
     }
 
     /**
@@ -50,7 +46,9 @@ public class UnitTest {
      */
     @Test
     public void pollTest(){
-
+        queue.remove();
+        queue.remove();
+        assertNull(queue.poll());
     }
 
     /**
@@ -58,6 +56,20 @@ public class UnitTest {
      */
     @Test
     public void removeTest(){
+        queue.add(55);
+        queue.remove();
+        queue.add(67);
+        assertEquals(queue.element(), 67);
+    }
 
+    /**
+     * Tests null functionality of peek method from Queue class
+     */
+    @Test
+    public void peek2Test(){
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        assertNull(queue.peek());
     }
 }
